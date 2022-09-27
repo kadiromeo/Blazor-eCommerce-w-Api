@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Blazor_eCommerce_Project.Business</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Implementaion\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blazor-eCommerce-Project.Common\Blazor-eCommerce-Project.Common.csproj" />
+    <ProjectReference Include="..\Blazor-eCommerce-Project.Models\Blazor-eCommerce-Project.Models.csproj" />
+  </ItemGroup>
+
+</Project>
