@@ -10,7 +10,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Blazor-eCommerce-Project.Common\Blazor-eCommerce-Project.Common.csproj" />
+    <ProjectReference Include="..\Blazor-eCommerce-Project.Data.Access\Blazor-eCommerce-Project.Data.Access.csproj" />
     <ProjectReference Include="..\Blazor-eCommerce-Project.Models\Blazor-eCommerce-Project.Models.csproj" />
   </ItemGroup>
 

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Blazor_eCommerce_Project.Data.Access.Migrations
 {
-    [DbContext(typeof(Context))]
+    [DbContext(typeof(CourseContext))]
     [Migration("20220927134134_CreateDatabase")]
     partial class CreateDatabase
     {

@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace Blazor_eCommerce_Project.Business.Contracts
 {
-    public interface ICourseInterface
+    public interface ICourseRepository
     {
-        public Task<Result<CourseDTO>> CreateCourse(CourseDTO courseDTO);
-        public Task<Result<CourseDTO>> UpdateCourse(int courseId,CourseDTO courseDTO);
+        public Task<Result<CourseDTO>> CreateCourse(CourseDTO courseDto);
+        public Task<Result<CourseDTO>> UpdateCourse(int courseId,CourseDTO courseDto);
         public Task<Result<CourseDTO>> GetCourse(int courseId);
         public Task<Result<int>> DeleteCourse(int courseId);
         public Task<Result<IEnumerable<CourseDTO>>> GetAllCourse();

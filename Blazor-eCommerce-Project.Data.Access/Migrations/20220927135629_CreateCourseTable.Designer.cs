@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Blazor_eCommerce_Project.Data.Access.Migrations
 {
-    [DbContext(typeof(Context))]
+    [DbContext(typeof(CourseContext))]
     [Migration("20220927135629_CreateCourseTable")]
     partial class CreateCourseTable
     {

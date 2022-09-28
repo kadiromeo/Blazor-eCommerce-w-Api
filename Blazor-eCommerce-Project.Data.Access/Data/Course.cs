@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Blazor_eCommerce_Project.Data.Access.Data
 {
-    public class Cource
+    public class Course
     {
         [Key]
         public int Id { get; set; }
