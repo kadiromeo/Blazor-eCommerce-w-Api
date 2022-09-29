@@ -7,15 +7,20 @@ namespace Blazor_eCommerce_Project.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Name Must be have fill...!")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Price Must be have fill...!")]
         public decimal Price { get; set; }
         [Required(ErrorMessage = "Must be selected Is-Active...!")]
         public bool IsActive { get; set; }
+        
+        [Required(ErrorMessage = "Description Must be have fill...!")]
         public string Description { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Title Must be have fill...!")]
         public string Title { get; set; }
+        [Required(ErrorMessage = "Title Must be have fill...!")]
+
         public string SubTitle { get; set; }
         public double RegularRate { get; set; }
         public string Details { get; set; }

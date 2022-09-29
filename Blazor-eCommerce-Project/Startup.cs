@@ -1,6 +1,9 @@
 using Blazor_eCommerce_Project.Areas.Identity;
+using Blazor_eCommerce_Project.Business.Contracts;
+using Blazor_eCommerce_Project.Business.Implementaion;
 using Blazor_eCommerce_Project.Data;
 using Blazor_eCommerce_Project.Data.Access.Data;
+using Blazor_eCommerce_Project.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -39,6 +42,8 @@ namespace Blazor_eCommerce_Project
                 .AddEntityFrameworkStores<CourseContext>();
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<IFileUpload, FileUpload>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
             services.AddDatabaseDeveloperPageExceptionFilter();

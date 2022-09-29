@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor-eCommerce-Project", "Blazor-eCommerce-Project\Blazor-eCommerce-Project.csproj", "{8890D6A0-1C25-4D87-B836-B2E97536E555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor-eCommerce-Project", "Blazor-eCommerce-Project\Blazor-eCommerce-Project.csproj", "{8890D6A0-1C25-4D87-B836-B2E97536E555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor-eCommerce-Project.Data.Access", "Blazor-eCommerce-Project.Data.Access\Blazor-eCommerce-Project.Data.Access.csproj", "{49A2C18C-A755-4D41-9961-BD629DEDA756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor-eCommerce-Project.Data.Access", "Blazor-eCommerce-Project.Data.Access\Blazor-eCommerce-Project.Data.Access.csproj", "{49A2C18C-A755-4D41-9961-BD629DEDA756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor-eCommerce-Project.Common", "Blazor-eCommerce-Project.Common\Blazor-eCommerce-Project.Common.csproj", "{49EE88BD-43CE-40F2-930B-41AB0195BC7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor-eCommerce-Project.Common", "Blazor-eCommerce-Project.Common\Blazor-eCommerce-Project.Common.csproj", "{49EE88BD-43CE-40F2-930B-41AB0195BC7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor-eCommerce-Project.Models", "Blazor-eCommerce-Project.Models\Blazor-eCommerce-Project.Models.csproj", "{78CF820E-AE30-4740-8753-4C77CC8817A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor-eCommerce-Project.Models", "Blazor-eCommerce-Project.Models\Blazor-eCommerce-Project.Models.csproj", "{78CF820E-AE30-4740-8753-4C77CC8817A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor-eCommerce-Project.Business", "Blazor-eCommerce-Project.Business\Blazor-eCommerce-Project.Business.csproj", "{FEE2A40B-9635-4AAC-B051-5FAEA83E40D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor-eCommerce-Project.Business", "Blazor-eCommerce-Project.Business\Blazor-eCommerce-Project.Business.csproj", "{FEE2A40B-9635-4AAC-B051-5FAEA83E40D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,18 +7,23 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Blazor-eCommerce-Project</title>
-    <base href="~/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <base href="~/"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
     <link href="css/site.css" rel="stylesheet" />
-    <link href="Blazor-eCommerce-Project.styles.css" rel="stylesheet" />
+    <link href="Blazor-eCommerce-Project.styles.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/default.css"/>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
 </head>
-<body>
-    <component type="typeof(App)" render-mode="ServerPrerendered" />
 
+<body>
+
+    <component type="typeof(App)" render-mode="ServerPrerendered"/>
     <div id="blazor-error-ui">
         <environment include="Staging,Production">
             An error has occurred. This application may no longer respond until reloaded.
@@ -30,6 +35,10 @@
         <a class="dismiss">🗙</a>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="~/js/common.js"></script>
     <script src="_framework/blazor.server.js"></script>
+
 </body>
 </html>

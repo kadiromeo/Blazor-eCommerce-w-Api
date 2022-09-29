@@ -22,17 +22,16 @@ namespace Blazor_eCommerce_Project.Business.Implementaion
             _mapper = mapper;
         }
 
-
-
         public async Task<Result<CourseDTO>> CreateCourse(CourseDTO courseDto)
         {
             var course = _mapper.Map<CourseDTO, Course>(courseDto);
-            course.CreatedBy = "Kadir YOLCU";
-            var addedCourse= await _courseContext.AddAsync(course);
+            course.CreatedBy = "Best Codder";
+            var addedCourse = await _courseContext.Cources.AddAsync(course);
             await _courseContext.SaveChangesAsync();
             var returnData = _mapper.Map<Course, CourseDTO>(addedCourse.Entity);
             return new Result<CourseDTO>(true, ResultConstant.RecordCreateSuccessfully, returnData);
         }
+
 
         public async Task<Result<int>> DeleteCourse(int courseId)
         {
@@ -51,11 +50,11 @@ namespace Blazor_eCommerce_Project.Business.Implementaion
         {
             try
             {
-                var courseDtos = _mapper.Map<IEnumerable<Course>, IEnumerable<CourseDTO>>(_courseContext.Cources);
+                var courseDtos =  _mapper.Map<IEnumerable<Course>, IEnumerable<CourseDTO>>(_courseContext.Cources);
                 return new Result<IEnumerable<CourseDTO>>(true, ResultConstant.RecordFound, courseDtos, courseDtos.ToList().Count);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 return new Result<IEnumerable<CourseDTO>>(false, ResultConstant.RecordNotFound);
@@ -102,6 +101,35 @@ namespace Blazor_eCommerce_Project.Business.Implementaion
                 return new Result<CourseDTO>(false, ResultConstant.RecordUpdateNotSuccessfully);
 
             }
+        }
+
+        public async Task<Result<CourseDTO>> UpdateCourseImage(int courseId, string imagePath)
+        {
+            try
+            {
+                if (courseId >0)
+                {
+                    var courseDetails = await _courseContext.Cources.FindAsync(courseId);
+                    courseDetails.UpdatedBy = "Kadir YOLCU";
+                    courseDetails.UpdatedDate = DateTime.Now;
+                    courseDetails.ImgUrl = imagePath;
+                    var updateCourse = _courseContext.Update(courseDetails);
+                    await _courseContext.SaveChangesAsync();
+                    var returnData = _mapper.Map<Course, CourseDTO>(updateCourse.Entity);
+                    return new Result<CourseDTO>(true, ResultConstant.RecordUpdateSuccessfully, returnData);
+                }
+                else
+                {
+                    return new Result<CourseDTO>(false, ResultConstant.RecordUpdateNotSuccessfully);
+                }
+            }
+            catch (Exception)
+            {
+
+                return new Result<CourseDTO>(false, ResultConstant.RecordUpdateNotSuccessfully);
+
+            }
+
         }
     }
 }

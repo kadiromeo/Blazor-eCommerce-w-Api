@@ -1,0 +1,46 @@
+﻿@page "/courseList"
+
+@using Blazor_eCommerce_Project.Business.Contracts
+
+@inject NavigationManager _navigationManager
+@inject ICourseRepository _courseRepository
+@inject IJSRuntime _jsRuntime
+
+<div class="row mt-4">
+    <div class="col-md-3">
+        <h4>Course List</h4>
+    </div>
+    <div class="col-md-3">
+        <NavLink href="course/createorupdate" class="btn btn-success">Course Add</NavLink>
+    </div>
+</div>
+
+<RadzenGrid TItem="CourseDTO" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" PageSize="4" AllowSorting="true" Data="@CourseModelList" ColumnWidth="150px" AllowPaging="true" AllowFiltering="true">
+   
+    <Columns>
+
+        <RadzenGridColumn TItem="CourseDTO" Title="Name" Property="Name"> </RadzenGridColumn>    
+        <RadzenGridColumn TItem="CourseDTO" Title="Price" Property="Price"> </RadzenGridColumn>
+        <RadzenGridColumn TItem="CourseDTO" Title="Description" Property="Description"> </RadzenGridColumn>
+        <RadzenGridColumn TItem="CourseDTO" Title="Title" Property="Title"> </RadzenGridColumn>
+     
+    </Columns>
+
+</RadzenGrid>
+
+@code {
+
+    private IEnumerable<CourseDTO> CourseModelList { get; set; } = new List<CourseDTO>();
+    private IEnumerable<CourseDTO> courseList = Enumerable.Empty<CourseDTO>();
+
+    public string ErrorMessage { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await _courseRepository.GetAllCourse();
+        if (!data.IsSuccess)
+            ErrorMessage = data.Message;
+        else
+            CourseModelList = data.Data;
+    }
+}

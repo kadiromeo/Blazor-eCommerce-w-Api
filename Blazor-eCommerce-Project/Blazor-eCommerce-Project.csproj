@@ -14,10 +14,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17" />
+    <PackageReference Include="Radzen.Blazor" Version="4.1.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Blazor-eCommerce-Project.Business\Blazor-eCommerce-Project.Business.csproj" />
     <ProjectReference Include="..\Blazor-eCommerce-Project.Data.Access\Blazor-eCommerce-Project.Data.Access.csproj" />
+    <ProjectReference Include="..\Blazor-eCommerce-Project.Models\Blazor-eCommerce-Project.Models.csproj" />
   </ItemGroup>
 
 </Project>
