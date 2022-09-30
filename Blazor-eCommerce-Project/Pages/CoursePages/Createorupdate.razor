@@ -8,6 +8,8 @@
 @inject IFileUpload _fileUpload
 @inject IJSRuntime _jsRuntime
 
+@attribute [Authorize]
+
 
 <h4>Course Added</h4>
 <div class="col-md-12">
@@ -63,6 +65,7 @@
 
 @code 
 {
+    public Task<AuthenticationState> State { get; set; }
 
     [Parameter]
     public int? Id { get; set; }
@@ -73,6 +76,15 @@
 
     protected override async Task OnInitializedAsync()
     {
+        var authState = await State;
+        if (!authState.User.Identity.IsAuthenticated)
+        {
+            var url = new Uri(_navigationManager.Uri);
+            _navigationManager.NavigateTo($"/Identity/Account/Login?returnUrl={url.LocalPath}");
+
+        }
+
+
         if (Id!=null)
         {
 

@@ -38,8 +38,10 @@ namespace Blazor_eCommerce_Project
             services.AddDbContext<CourseContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<CourseContext>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<CourseContext>().AddDefaultTokenProviders().AddDefaultUI();
+
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddScoped<ICourseRepository, CourseRepository>();
@@ -75,6 +77,7 @@ namespace Blazor_eCommerce_Project
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");

@@ -6,6 +6,8 @@
 @inject ICourseRepository _courseRepository
 @inject IJSRuntime _jsRuntime
 
+@attribute [Authorize]
+
 <div class="row mt-4">
     <div class="col-md-3">
         <h4>Course List</h4>
@@ -19,6 +21,7 @@
    
     <Columns>
 
+        <RadzenGridColumn TItem="CourseDTO" Title="Id" Property="Id"> </RadzenGridColumn>
         <RadzenGridColumn TItem="CourseDTO" Title="Name" Property="Name"> </RadzenGridColumn>    
         <RadzenGridColumn TItem="CourseDTO" Title="Price" Property="Price"> </RadzenGridColumn>
         <RadzenGridColumn TItem="CourseDTO" Title="Description" Property="Description"> </RadzenGridColumn>
